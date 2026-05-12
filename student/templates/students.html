@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+  </head>
+  <body>
+    <h1>Students</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Branch</th>
+      </tr>
+
+      {% for student in students %}
+      <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.rolno }}</td>
+        <td>{{ student.branch }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% if messages %} {% for message in messages %}
+    <div
+      style="
+        background: #d4edda;
+        color: #155724;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      "
+    >
+      {{ message }}
+    </div>
+    {% endfor %} {% endif %}
+  </body>
+</html>

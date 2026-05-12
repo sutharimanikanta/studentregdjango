@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 8px;
+      }
+
+      label {
+        margin-top: 10px;
+        display: block;
+      }
+
+      input[type="radio"] {
+        width: auto;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form action="/register/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Name" />
+      <label for="rolno">Roll No.:</label>
+      <input type="text" id="rolno" name="rolno" placeholder="Roll No." />
+      <label for="branch">Branch:</label>
+
+      <input type="radio" id="branch_cse" name="branch" value="CSE" /> CSE
+      <input type="radio" id="branch_ece" name="branch" value="ECE" /> ECE
+      <input type="radio" id="branch_mech" name="branch" value="MECH" /> MECH
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
